@@ -18,13 +18,13 @@ export default {
         { text: "TypeScript", link: "/typescript/" },
       ],
     },
-    {
-      text: "框架",
-      items: [
-        { text: "React", link: "/react/" },
-        { text: "Vue2", link: "/vue2/" },
-        { text: "Vue3", link: "/vue3/" },
-      ],
-    },
+    // {
+    //   text: "框架",
+    //   items: [
+    //     { text: "React", link: "/react/" },
+    //     { text: "Vue2", link: "/vue2/" },
+    //     { text: "Vue3", link: "/vue3/" },
+    //   ],
+    // },
   ],
 };
