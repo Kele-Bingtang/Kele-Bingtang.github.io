@@ -11,7 +11,7 @@ const description = [
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   extends: teekConfig,
-  title: "vitepress-theme-teek",
+  title: "Teeker Blog",
   description: description,
   cleanUrls: true,
   lastUpdated: true,
@@ -32,12 +32,12 @@ export default defineConfig({
       "meta",
       {
         name: "viewport",
-        content:
-          "width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no",
+        content: "width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no",
       },
     ],
 
     ["meta", { name: "keywords", description }],
+    ["meta", { name: "baidu-site-verification", content: "codeva-QnY1Xh758j" }], // 百度收录
   ],
   markdown: {
     // 开启行号
@@ -57,15 +57,13 @@ export default defineConfig({
   },
   sitemap: {
     hostname: "https://note.teek.top",
-    transformItems: (items) => {
+    transformItems: items => {
       const permalinkItemBak: typeof items = [];
       // 使用永久链接生成 sitemap
-      const permalinks = (globalThis as any).VITEPRESS_CONFIG.site.themeConfig
-        .permalinks;
-      items.forEach((item) => {
+      const permalinks = (globalThis as any).VITEPRESS_CONFIG.site.themeConfig.permalinks;
+      items.forEach(item => {
         const permalink = permalinks?.map[item.url];
-        if (permalink)
-          permalinkItemBak.push({ url: permalink, lastmod: item.lastmod });
+        if (permalink) permalinkItemBak.push({ url: permalink, lastmod: item.lastmod });
       });
       return [...items, ...permalinkItemBak];
     },
@@ -97,8 +95,7 @@ export default defineConfig({
     },
     editLink: {
       text: "在 GitHub 上编辑此页",
-      pattern:
-        "https://github.com/Kele-Bingtang/Kele-Bingtang.github.io/edit/master/docs/:path",
+      pattern: "https://github.com/Kele-Bingtang/Kele-Bingtang.github.io/edit/master/docs/:path",
     },
   },
 });

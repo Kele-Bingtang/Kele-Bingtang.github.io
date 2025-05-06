@@ -3,6 +3,7 @@ import Teek, { clockIcon } from "vitepress-theme-teek";
 import { watch, nextTick } from "vue";
 import { useRuntime } from "../hooks/useRuntime";
 import { useData } from "vitepress";
+import ContributeChart from "./ContributeChart.vue";
 
 const { frontmatter } = useData();
 
@@ -13,7 +14,7 @@ const { start, stop } = useRuntime("2021-10-19", {
 
 watch(
   frontmatter,
-  async (newVal) => {
+  async newVal => {
     await nextTick();
     if (newVal.layout === "home") start();
     else stop();
@@ -23,5 +24,9 @@ watch(
 </script>
 
 <template>
-  <Teek.Layout></Teek.Layout>
+  <Teek.Layout>
+    <template #teek-archives-top-before>
+      <ContributeChart />
+    </template>
+  </Teek.Layout>
 </template>

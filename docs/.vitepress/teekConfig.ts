@@ -22,8 +22,7 @@ export const teekConfig = defineTeekConfig({
     descStyle: "types",
   },
   blogger: {
-    avatar:
-      "https://testingcf.jsdelivr.net/gh/Kele-Bingtang/static/user/avatar2.png",
+    avatar: "https://testingcf.jsdelivr.net/gh/Kele-Bingtang/static/user/avatar2.png",
     shape: "square",
     name: "天客 - Teeker",
     slogan: "朝圣的使徒，正在走向编程的至高殿堂！",
@@ -37,37 +36,62 @@ export const teekConfig = defineTeekConfig({
   friendLink: {
     list: [
       {
-        avatar: "https://doc.xugaoyi.com/img/logo.png",
-        name: "vuepress-theme-vdoing",
-        desc: "🚀一款简洁高效的VuePress 知识管理&博客 主题",
-        link: "https://doc.xugaoyi.com/",
+        name: "George Chan",
+        desc: "让我给你讲讲他的传奇故事吧",
+        avatar: "https://z3.ax1x.com/2021/09/30/4oKMVI.jpg",
+        link: "https://cyc0819.top/",
       },
       {
-        avatar: "https://onedayxyy.cn/img/xyy-touxiang.png",
+        name: "butcher2000",
+        desc: "即使再小的帆，也能远航",
+        avatar: "https://cdn.jsdelivr.net/gh/Kele-Bingtang/static/user/20211029181901.png",
+        link: "https://blog.csdn.net/weixin_46827107",
+      },
+      {
+        name: "Evan's blog",
+        desc: "前端的小学生",
+        avatar: "https://cdn.jsdelivr.net/gh/xugaoyi/image_store@master/blog/20200103123203.jpg",
+        link: "https://xugaoyi.com/",
+      },
+      {
+        name: "二丫讲梵",
+        desc: "💻学习📝记录🔗分享",
+        avatar: "https://wiki.eryajf.net/img/logo.png",
+        link: "https://wiki.eryajf.net/",
+      },
+      {
+        name: "Weibw",
+        desc: "一个没有梦想的咸鱼",
+        avatar: "https://cdn.jsdelivr.net/gh/Weibw162/image-hosting@dev/杂录/image.735febsv1zo0.webp",
+        link: "http://weibw162.com/",
+      },
+      {
+        name: "风祈的时光录",
+        desc: "主要是Java技术栈的博客，比较偏原理，源码类型的博主",
+        avatar: "https://npm.elemecdn.com/lql_static@latest/avatar/1.jpg",
+        link: "https://imlql.cn/",
+      },
+      {
         name: "One",
         desc: "明心静性，爱自己",
+        avatar: "https://onedayxyy.cn/img/xyy-touxiang.png",
         link: "https://onedayxyy.cn/",
       },
       {
-        avatar: "https://teek.seasir.top/avatar/avatar.webp",
         name: "Hyde Blog",
         desc: "人心中的成见是一座大山",
+        avatar: "https://teek.seasir.top/avatar/avatar.webp",
         link: "https://teek.seasir.top/",
       },
-      {
-        avatar: "https://wiki.eryajf.net/img/logo.png",
-        name: "二丫讲梵",
-        desc: "💻学习📝记录🔗分享",
-        link: " https://wiki.eryajf.net/",
-      },
     ],
+    titleClick: router => router.go("/friends"), // 查看更多友链
   },
   footerInfo: {
     copyright: {
       createYear: 2025,
       suffix: "Teeker Blog",
     },
-    customHtml: `<span id="runtime"></span>`, // 需要搭配 .vitepress/theme/helper/useRuntime.ts 使用
+    customHtml: `<span id="runtime"></span>`, // 搭配 .vitepress/theme/helper/useRuntime.ts 使用
   },
   social: [
     {
@@ -82,7 +106,7 @@ export const teekConfig = defineTeekConfig({
     },
   ],
   codeBlock: {
-    copiedDone: (TkMessage) => TkMessage.success("复制成功！"),
+    copiedDone: TkMessage => TkMessage.success("复制成功！"),
   },
   articleShare: { enabled: true },
   comment: {
@@ -95,19 +119,14 @@ export const teekConfig = defineTeekConfig({
   vitePlugins: {
     sidebarOption: {
       initItems: false,
+      collapsed: true,
     },
   },
   siteAnalytics: [
     {
       provider: "baidu",
       options: {
-        id: "d5ee872d9aa1ef8021f4a3921b2e9c2a",
-      },
-    },
-    {
-      provider: "google",
-      options: {
-        id: "G-K5GNDW3L7K",
+        id: "83ffffafdd0510006f0ecd327cde6750",
       },
     },
   ],

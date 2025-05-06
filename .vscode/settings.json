@@ -45,5 +45,5 @@
   "[less]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["teek", "teeker", "vitepress"]
+  "cSpell.words": ["teek", "teeker", "vitepress", "echarts"]
 }
