@@ -4,6 +4,7 @@ import { watch, nextTick } from "vue";
 import { useRuntime } from "../hooks/useRuntime";
 import { useData } from "vitepress";
 import ContributeChart from "./ContributeChart.vue";
+import GlobalGreet from "./GlobalGreet.vue";
 
 const { frontmatter } = useData();
 
@@ -24,6 +25,8 @@ watch(
 </script>
 
 <template>
+  <GlobalGreet />
+
   <Teek.Layout>
     <template #teek-archives-top-before>
       <ContributeChart />

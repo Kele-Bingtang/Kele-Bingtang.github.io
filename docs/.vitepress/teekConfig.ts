@@ -1,6 +1,7 @@
 import { defineTeekConfig } from "vitepress-theme-teek/config";
 
 export const teekConfig = defineTeekConfig({
+  pageStyle: "segment-nav",
   author: { name: "Teeker", link: "https://github.com/Kele-Bingtang" },
   wallpaper: {
     enabled: true,
@@ -48,6 +49,12 @@ export const teekConfig = defineTeekConfig({
         link: "https://blog.csdn.net/weixin_46827107",
       },
       {
+        name: "vitepress-theme-teek",
+        desc: "✨一个轻量、简洁高效、灵活配置的 VitePress 主题",
+        avatar: "https://vp.teek.top/teek-logo-large.png",
+        link: "http://vp.teek.top/",
+      },
+      {
         name: "Evan's blog",
         desc: "前端的小学生",
         avatar: "https://cdn.jsdelivr.net/gh/xugaoyi/image_store@master/blog/20200103123203.jpg",
@@ -84,11 +91,12 @@ export const teekConfig = defineTeekConfig({
         link: "https://teek.seasir.top/",
       },
     ],
+    autoPage: true,
     titleClick: router => router.go("/friends"), // 查看更多友链
   },
   footerInfo: {
     copyright: {
-      createYear: 2025,
+      createYear: 2021,
       suffix: "Teeker Blog",
     },
     customHtml: `<span id="runtime"></span>`, // 搭配 .vitepress/theme/helper/useRuntime.ts 使用
@@ -113,7 +121,6 @@ export const teekConfig = defineTeekConfig({
     provider: "twikoo",
     options: {
       envId: "https://twikoo.youngkbt.cn/",
-      link: "https://gcore.jsdelivr.net/npm/twikoo@1.6.41/dist/twikoo.all.min.js",
     },
   },
   vitePlugins: {
