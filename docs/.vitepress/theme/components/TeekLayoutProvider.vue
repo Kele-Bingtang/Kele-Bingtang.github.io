@@ -1,8 +1,9 @@
 <script setup lang="ts" name="TeekLayoutProvider">
 import Teek, { clockIcon } from "vitepress-theme-teek";
 import { watch, nextTick } from "vue";
-import { useRuntime } from "../hooks/useRuntime";
 import { useData } from "vitepress";
+import { useRuntime } from "../hooks/useRuntime";
+import { useRibbon } from "../hooks/useRibbon";
 import ContributeChart from "./ContributeChart.vue";
 import GlobalGreet from "./GlobalGreet.vue";
 
@@ -22,6 +23,9 @@ watch(
   },
   { immediate: true }
 );
+
+// 彩带背景
+const { start: startRibbon, stop: stopRibbon } = useRibbon();
 </script>
 
 <template>

@@ -9,7 +9,6 @@ const hasGreet = ref(false);
 const duration = 4000;
 
 const greet = () => {
-  console.log(1);
   if (hasGreet.value) return;
 
   hasGreet.value = true;
@@ -28,12 +27,16 @@ const greet = () => {
   )}`;
   const message = getGreetingMessage(hours, timeStr);
 
-  TkMessage.info({ message, duration, plain: true });
+  TkMessage.info({ message, duration, plain: true, offset: 80 });
 };
 
 const getGreetingMessage = (hours: number, timeStr: string) => {
-  if (hours >= 6 && hours < 11) {
+  if (hours >= 6 && hours < 10) {
     return `早上好呀~~，现在是 ${timeStr}，吃早餐了吗？😊🤭`;
+  }
+
+  if (hours >= 10 && hours < 12) {
+    return `上午好呀~~，现在是 ${timeStr}，该准备吃饭啦🥗🍖~~`;
   }
 
   if (hours >= 12 && hours <= 16) {
