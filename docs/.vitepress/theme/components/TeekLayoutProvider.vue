@@ -25,7 +25,7 @@ watch(
 );
 
 // 彩带背景
-const { start: startRibbon, stop: stopRibbon } = useRibbon();
+useRibbon();
 </script>
 
 <template>
