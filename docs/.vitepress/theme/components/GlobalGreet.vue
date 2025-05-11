@@ -1,5 +1,5 @@
 <script setup lang="ts" name="GlobalGreet">
-import { TkMessage } from "vitepress-theme-teek";
+import { TkMessage, isClient } from "vitepress-theme-teek";
 import { ref, watch } from "vue";
 import { useRoute } from "vitepress";
 
@@ -9,7 +9,7 @@ const hasGreet = ref(false);
 const duration = 4000;
 
 const greet = () => {
-  if (hasGreet.value) return;
+  if (hasGreet.value || !isClient) return;
 
   hasGreet.value = true;
   setTimeout(() => {

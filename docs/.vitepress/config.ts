@@ -89,7 +89,6 @@ export default defineConfig({
         link: "https://github.com/Kele-Bingtang/Kele-Bingtang.github.io",
       },
     ],
-
     search: {
       provider: "local",
     },
