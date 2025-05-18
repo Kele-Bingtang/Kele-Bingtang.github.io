@@ -84,7 +84,7 @@ const renderChart = (data: any) => {
   if (chartRef.value) contributeChart.value = echarts.init(chartRef.value);
 
   option.series.data = data;
-  contributeChart.value.setOption(option);
+  contributeChart.value?.setOption(option);
 };
 
 watch(
