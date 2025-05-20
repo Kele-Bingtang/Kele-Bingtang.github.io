@@ -1,6 +1,6 @@
 <script setup lang="ts" name="TeekLayoutProvider">
-import Teek, { clockIcon } from "vitepress-theme-teek";
-import { watch, nextTick } from "vue";
+import Teek, { clockIcon, teekConfigContext } from "vitepress-theme-teek";
+import { watch, nextTick, provide } from "vue";
 import { useData } from "vitepress";
 import { useRuntime } from "../hooks/useRuntime";
 import { useRibbon } from "../hooks/useRibbon";
@@ -10,7 +10,7 @@ import GlobalGreet from "./GlobalGreet.vue";
 const { frontmatter } = useData();
 
 // 页脚运行时间
-const { start, stop } = useRuntime("2021-10-19", {
+const { start: startRuntime, stop: stopRuntime } = useRuntime("2021-10-19", {
   prefix: `<span style="width: 16px; display: inline-block; vertical-align: -3px; margin-right: 3px;">${clockIcon}</span>小破站已运行 `,
 });
 
@@ -18,14 +18,25 @@ watch(
   frontmatter,
   async newVal => {
     await nextTick();
-    if (newVal.layout === "home") start();
-    else stop();
+    if (newVal.layout === "home") startRuntime();
+    else stopRuntime();
   },
   { immediate: true }
 );
 
 // 彩带背景
-useRibbon();
+const { start: startRibbon, stop: stopRibbon } = useRibbon({ immediate: false });
+
+provide(teekConfigContext, {
+  themeEnhance: {
+    layoutSwitch: {
+      switchModeDone: mode => {
+        if (mode === "original") startRibbon();
+        else stopRibbon();
+      },
+    },
+  },
+});
 </script>
 
 <template>

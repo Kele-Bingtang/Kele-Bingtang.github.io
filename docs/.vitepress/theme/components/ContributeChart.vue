@@ -108,8 +108,8 @@ watch(isDark, () => {
 </template>
 
 <style>
-.tk-page.tk-archives {
-  max-width: 1220px;
+.tk-article-page.tk-archives {
+  width: 1220px;
 }
 
 .tk-archives .contribute__chart {
