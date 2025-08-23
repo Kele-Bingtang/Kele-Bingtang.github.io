@@ -49,7 +49,7 @@ export default defineConfig({
     },
   },
   sitemap: {
-    hostname: "https://note.teek.top",
+    hostname: "https://notes.teek.top",
     transformItems: items => {
       const permalinkItemBak: typeof items = [];
       // 使用永久链接生成 sitemap
