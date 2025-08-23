@@ -27,14 +27,7 @@ export default defineConfig({
     ["meta", { property: "og:url", content: "" }],
     ["meta", { property: "og:description", description }],
     ["meta", { name: "description", description }],
-    ["meta", { name: "author", content: "Teek" }],
-    [
-      "meta",
-      {
-        name: "viewport",
-        content: "width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no",
-      },
-    ],
+    ["meta", { name: "author", content: "Teeker" }],
     ["meta", { name: "keywords", description }],
     ["meta", { name: "baidu-site-verification", content: "codeva-QnY1Xh758j" }], // 百度收录
     ["meta", { name: "msvalidate.01", content: "48CABE70F538B8D117567176ABF325AF" }], // Bing 收录验证
@@ -90,7 +83,12 @@ export default defineConfig({
       },
     ],
     search: {
-      provider: "local",
+      provider: "algolia",
+      options: {
+        appId: "2LFTZ9LKO9",
+        apiKey: "017332fa7dc0bbe5e1637b215f92a5d1",
+        indexName: "teeker_notes",
+      },
     },
     editLink: {
       text: "在 GitHub 上编辑此页",
