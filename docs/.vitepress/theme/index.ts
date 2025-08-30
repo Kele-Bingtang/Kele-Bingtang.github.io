@@ -10,8 +10,8 @@ import "vitepress-theme-teek/theme-chalk/tk-table.css";
 import "vitepress-theme-teek/theme-chalk/tk-mark.css";
 import "vitepress-theme-teek/theme-chalk/tk-blockquote.css";
 import "vitepress-theme-teek/theme-chalk/tk-index-rainbow.css";
-import "vitepress-theme-teek/theme-chalk/tk-doc-fade-in.css";
 import "vitepress-theme-teek/theme-chalk/tk-banner-desc-gradient.css";
+import "vitepress-theme-teek/theme-chalk/tk-fade-up-animation.css"; // 首次加载的动画效果
 import "./styles/code-bg.css";
 
 export default {
